@@ -10,10 +10,12 @@ export default {
 			store,
 		};
 	},
+
 	components: {
     HeaderApp,
     CardList,
   	},
+
 	created() {
 		// qui fare la richiesta all'api
 		axios
@@ -27,7 +29,7 @@ export default {
 	<div class="container">
 		<main>
       <HeaderApp/>
-			<CardList />
+			<CardList/>
 		</main>
 	</div>
 </template>
@@ -53,3 +55,4 @@ h1 {
 	text-align: center;
 }
 </style>
+

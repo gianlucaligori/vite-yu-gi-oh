@@ -7,7 +7,7 @@ export default {};
 <header>
   <img src="../assets/img/Yu-Gi-Oh_Logo.jpg" alt="">
 
-  <h1>Yu Gi Oh</h1>
+  <h1>Yu Gi Oh API</h1>
 </header>
 
 </template>
@@ -18,6 +18,7 @@ header {
   display: flex;
   align-items: center;
   height: 3rem;
+  margin-bottom: 3rem;
 }  
   img {
     height: 100%;
