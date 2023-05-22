@@ -1,42 +1,37 @@
 <script>
-
 import CardApp from './CardApp.vue';
 import { store } from '../store';
-export default {
-  
-    data() {
-        return {
-            store,
-        }
-    },
 
-    components: {
-        CardApp,
-    }
-}
+export default {
+	data() {
+		return {
+			store,
+		};
+	},
+	components: {
+		CardApp,
+	},
+};
 </script>
 
-
-<template lang="">
-    <main>
-        
-        <select name="select" id="Seleziona">
-            <option value="Seleziona">Seleziona</option> <!-- cambia value e testo-->
-        </select>
-
-        <div class="container">
-            <CardApp/>
-        </div>
-    </main>
+<template>
+	<div class="cards-container">
+		<CharacterCard
+			v-for="character in store.characterList"
+			:key="character.id"
+			class="card-character"
+			:characterData="character"
+		/>
+	</div>
 </template>
 
-
 <style lang="scss" scoped>
-  
-  main {
-    max-width: 1200px;
-    border: 1px solid black;
-    margin: auto;
-    margin-top: 1rem;   //Poi cancella
-  }
+.cards-container {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.card-character {
+	flex: 0 0 25%;
+}
 </style>
