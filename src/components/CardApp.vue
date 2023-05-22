@@ -1,6 +1,10 @@
-
 <script>
 export default {
+
+  props: {
+    cardData: Object,
+
+  }
   
 }
 </script>
@@ -8,7 +12,7 @@ export default {
 
 <template lang="">
   <div>
-    
+    <h1> {{ cardData.name }} </h1>  
   </div>
 </template>
 
