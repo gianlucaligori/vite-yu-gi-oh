@@ -15,12 +15,18 @@ export default {
 </script>
 
 <template>
+
+    <select name="" id="" placeholder="Seleziona">
+        <option value="">Seleziona qui</option>
+    </select>
+
+
 	<div class="cards-container">
-		<CharacterCard
-			v-for="character in store.characterList"
-			:key="character.id"
+		<CardApp
+			v-for="(card, index) in store.cardList"
+			:key="index"
 			class="card-character"
-			:characterData="character"
+			:card="card"
 		/>
 	</div>
 </template>

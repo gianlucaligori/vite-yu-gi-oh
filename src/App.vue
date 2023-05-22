@@ -1,7 +1,6 @@
 <script>
 import HeaderApp from './components/HeaderApp.vue';
 import CardList from './components/CardList.vue';
-import CardApp from './components/CardApp.vue';
 import axios from 'axios';
 import { store } from './store';
 
@@ -14,25 +13,21 @@ export default {
 	components: {
     HeaderApp,
     CardList,
-    CardApp,
   	},
 	created() {
 		// qui fare la richiesta all'api
 		axios
 			.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
-			.then(response => (this.store.characterList = response.data.data));
+			.then(response => (this.store.cardList = response.data.data));
 	},
 };
 </script>
 
 <template>
 	<div class="container">
-		<h1>Yu Gi Oh</h1>
-
 		<main>
       <HeaderApp/>
 			<CardList />
-			<CardApp />
 		</main>
 	</div>
 </template>

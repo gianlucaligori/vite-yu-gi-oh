@@ -1,18 +1,20 @@
 <script>
 export default {
+  name: "CardApp",
 	props: {
-		characterData: Object,
+		card: Object,
 	},
 };
 </script>
 
 <template>
 	<div class="card">
-		<img :src="characterData.card_images[0].image_url" :alt="characterData.name"/>
-		<h2>{{ characterData.name }}</h2>
-		<!-- <div class="species">{{ characterData.def }}</div> -->
+		<img :src="card.card_images[0].image_url" :alt="card.name"/>
+		<h2>{{ card.name }}</h2>
+		<div class="species">{{ card.def }}</div>
 	</div>
 </template>
+
 
 <style lang="scss" scoped>
 .card {
