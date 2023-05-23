@@ -1,6 +1,7 @@
 <script>
 import HeaderApp from './components/HeaderApp.vue';
 import CardList from './components/CardList.vue';
+import CardApp from './components/CardApp.vue';
 import axios from 'axios';
 import { store } from './store';
 
@@ -14,6 +15,7 @@ export default {
 	components: {
     HeaderApp,
     CardList,
+	// CardApp,
   	},
 
 	created() {
@@ -21,7 +23,14 @@ export default {
 		axios
 			.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
 			.then(response => (this.store.cardList = response.data.data));
+
+			axios
+			.get('https://db.ygoprodeck.com/api/v7/archetypes.php')
+			.then(response => (this.store.archetypesList) = response.data);
+			
 	},
+
+
 };
 </script>
 
@@ -30,6 +39,8 @@ export default {
 		<main>
       <HeaderApp/>
 			<CardList/>
+		<!-- <CardApp 
+		/> -->
 		</main>
 	</div>
 </template>
@@ -55,4 +66,3 @@ h1 {
 	text-align: center;
 }
 </style>
-

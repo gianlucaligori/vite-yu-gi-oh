@@ -17,21 +17,29 @@ export default {
 <template>
     <div class="bg-container">
 
-    <select name="" id="">
-        <option value="">Seleziona qui</option>
-    </select>
+        <select 
+        v-model="store.arrSelect" 
+        class="button-card" 
+        placeholder="Seleziona">
+
+        <option 
+        v-for="option in store.archetypesList" 
+        class="option-card">{{option.archetype_name}}
+        </option>
+
+        </select>
 
 
-    <div class="cards-container">
-        <CardApp
-            v-for="(card, index) in store.cardList"
-            :key="index"
-            class="card-character"
-            :card="card"
-        />
+        <div class="cards-container">
+            <CardApp
+                v-for="(card, index) in store.cardList"
+                :key="index"
+                class="card-character"
+                :card="card"
+            />
+        </div>
+
     </div>
-
-</div>
 
 </template>
 
